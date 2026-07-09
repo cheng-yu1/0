@@ -1,78 +1,99 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 
-<!-- 移动端适配 -->
+<!-- Makes the website responsive on phones and tablets -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>好物研习社 | 学生宿舍桌面好物推荐</title>
+
+<title>DormPick - Upgrade Your Dorm Room</title>
 
 
 <style>
 
-/* ==============================
-   全局基础样式
-   ============================== */
+/* ==========================================================
+   GLOBAL RESET AND BASE STYLES
+   ========================================================== */
 
-/* 使用系统字体，保证加载速度和阅读体验 */
+
+/*
+   Using system fonts keeps the website fast.
+   These fonts look clean on both Windows and Apple devices.
+*/
+
 * {
     box-sizing: border-box;
 }
 
 
 body {
+
     margin: 0;
-    background: #f8faf8;
-    color: #333;
+
+    background: #FAFAFA;
+
+    color: #2D2D2D;
+
     font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        "PingFang SC",
-        "Microsoft YaHei",
-        sans-serif;
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
 }
 
 
-/* 页面最大宽度 */
+/* Main content width */
+
 .container {
+
     width: 90%;
+
     max-width: 1200px;
+
     margin: auto;
+
 }
 
 
 
-/* ==============================
-   顶部导航栏
-   ============================== */
+/* ==========================================================
+   NAVIGATION BAR
+   ========================================================== */
+
+
+/*
+   Sticky navigation stays visible while scrolling.
+*/
 
 header {
 
-    background: rgba(255,255,255,0.9);
-
-    border-bottom:1px solid #eee;
-
     position: sticky;
-    top:0;
 
-    z-index:10;
+    top: 0;
 
-    backdrop-filter: blur(10px);
+    z-index: 100;
+
+    background: white;
+
+    border-bottom: 1px solid #eee;
+
 }
 
 
 .nav {
 
-    height:70px;
+    height: 75px;
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    justify-content: space-between;
 
-    justify-content:space-between;
+    align-items: center;
 
 }
 
@@ -80,11 +101,11 @@ header {
 
 .logo {
 
-    font-size:22px;
+    font-size: 26px;
 
-    font-weight:700;
+    font-weight: 700;
 
-    color:#1f4037;
+    letter-spacing: 1px;
 
 }
 
@@ -92,54 +113,55 @@ header {
 
 .nav-links {
 
-    display:flex;
+    display: flex;
 
-    gap:25px;
+    gap: 30px;
 
 }
 
 
 .nav-links a {
 
-    text-decoration:none;
+    text-decoration: none;
 
-    color:#666;
+    color: #555;
 
-    font-size:15px;
+    font-size: 15px;
 
 }
+
 
 
 .nav-links a:hover {
 
-    color:#1f4037;
+    color: #C2674A;
 
 }
 
 
 
-
-/* ==============================
-   页面介绍区域
-   ============================== */
+/* ==========================================================
+   HERO SECTION
+   ========================================================== */
 
 
 .hero {
 
-    padding:70px 0 40px;
+    padding: 90px 0 70px;
 
-    text-align:center;
+    text-align: center;
 
 }
 
 
+
 .hero h1 {
 
-    font-size:42px;
+    font-size: clamp(36px, 5vw, 60px);
 
-    margin-bottom:15px;
+    line-height: 1.1;
 
-    color:#1f4037;
+    margin-bottom: 20px;
 
 }
 
@@ -147,13 +169,62 @@ header {
 
 .hero p {
 
-    max-width:600px;
+    max-width: 650px;
 
-    margin:auto;
+    margin: auto;
 
-    line-height:1.8;
+    font-size: 18px;
 
-    color:#777;
+    color: #666;
+
+    line-height: 1.7;
+
+}
+
+
+
+.trust {
+
+    margin-top: 25px;
+
+    font-size: 14px;
+
+    color: #777;
+
+}
+
+
+
+/* Main CTA button */
+
+.cta {
+
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 15px 35px;
+
+    background:#C2674A;
+
+    color:white;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+
+
+.cta:hover {
+
+    transform:translateY(-3px);
+
+    opacity:.9;
 
 }
 
@@ -161,19 +232,39 @@ header {
 
 
 
-/* ==============================
-   产品卡片区域
-   ============================== */
+/* ==========================================================
+   PRODUCT SECTION
+   ========================================================== */
 
+
+.section-title {
+
+
+    font-size:34px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+/*
+   Desktop:
+   3 columns
+
+   Mobile:
+   2 columns
+*/
 
 .products {
+
 
     display:grid;
 
     grid-template-columns:
     repeat(3,1fr);
 
-    gap:30px;
+    gap:25px;
 
     padding-bottom:70px;
 
@@ -182,63 +273,95 @@ header {
 
 
 
-.product-card {
+
+/* Product card */
+
+.card {
+
 
     background:white;
 
-    border-radius:18px;
+    border-radius:16px;
 
-    overflow:hidden;
+    padding:18px;
 
     box-shadow:
-    0 10px 30px rgba(0,0,0,0.05);
+    0 10px 25px rgba(0,0,0,.06);
+
 
     transition:.3s;
 
-
 }
 
 
-.product-card:hover {
 
-    transform:translateY(-5px);
+.card:hover {
+
+
+    transform:translateY(-4px);
 
     box-shadow:
-    0 15px 35px rgba(0,0,0,0.1);
+    0 18px 35px rgba(0,0,0,.12);
 
 }
 
 
 
 
-.product-image {
 
-    width:100%;
+.image-wrapper {
 
-    height:230px;
 
-    object-fit:cover;
+    height:220px;
 
     background:#eee;
 
-}
+    border-radius:12px;
 
+    overflow:hidden;
 
-
-
-.product-content {
-
-    padding:25px;
+    position:relative;
 
 }
 
 
 
-.product-title {
+.image-wrapper img {
 
-    font-size:20px;
 
-    margin:0 0 12px;
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+.sparkle {
+
+
+    position:absolute;
+
+    top:10px;
+
+    right:10px;
+
+    font-size:22px;
+
+}
+
+
+
+
+
+.card h3 {
+
+
+    font-size:18px;
+
+    margin:20px 0 10px;
 
 }
 
@@ -246,29 +369,51 @@ header {
 
 .description {
 
+
     font-size:14px;
 
     color:#777;
 
-    line-height:1.7;
+    min-height:45px;
 
-    min-height:50px;
+    line-height:1.6;
+
+}
+
+
+
+
+
+.rating {
+
+
+    margin:15px 0;
+
+    color:#C2674A;
+
+    letter-spacing:3px;
 
 }
 
 
 
-.price {
+.badge {
 
-    font-size:20px;
 
-    font-weight:bold;
+    display:inline-block;
 
-    color:#e67e22;
+    background:#C2674A;
 
-    margin:18px 0;
+    color:white;
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    font-size:12px;
 
 }
+
 
 
 
@@ -280,18 +425,22 @@ header {
 
     text-align:center;
 
-    padding:13px;
+    padding:12px;
+
+    border:
+
+    1px solid #C2674A;
 
 
-    background:#1f4037;
+    border-radius:30px;
 
-    color:white;
+    color:#C2674A;
 
     text-decoration:none;
 
-    border-radius:10px;
-
     transition:.3s;
+
+    margin-top:15px;
 
 }
 
@@ -299,128 +448,199 @@ header {
 
 .amazon-btn:hover {
 
-    background:#16332c;
+
+    background:#C2674A;
+
+    color:white;
 
 }
 
 
 
 
+/* ==========================================================
+   BENEFIT BAR
+   ========================================================== */
 
-/* ==============================
-   页脚
-   ============================== */
+
+.benefits {
 
 
-footer {
+    display:grid;
 
-    background:#ffffff;
+    grid-template-columns:
+    repeat(3,1fr);
 
-    border-top:1px solid #eee;
+    gap:20px;
 
-    padding:35px 0;
+    margin-bottom:70px;
+
+}
+
+
+
+.benefit {
+
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:15px;
 
     text-align:center;
 
-    color:#888;
-
-    font-size:14px;
-
-    line-height:1.8;
-
 }
 
 
 
-
-
-/* ==============================
-   手机端适配
-   ============================== */
-
-
-@media(max-width:900px){
-
-
-.products {
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-}
-
-
-}
-
-
-@media(max-width:600px){
-
-
-.nav {
-
-    height:auto;
-
-    padding:15px 0;
-
-    flex-direction:column;
-
-    gap:15px;
-
-}
-
-
-
-.nav-links {
-
-    gap:15px;
-
-}
-
-
-.hero {
-
-    padding:40px 0;
-
-}
-
-
-.hero h1 {
+.benefit span {
 
     font-size:30px;
 
 }
 
 
+
+
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+
+footer {
+
+
+    background:#2D2D2D;
+
+    color:white;
+
+    padding:45px 0;
+
+    text-align:center;
+
+    font-size:14px;
+
+}
+
+
+footer a {
+
+    color:#ddd;
+
+    margin:0 10px;
+
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================================== */
+
+
+@media(max-width:700px){
+
+
+.nav-links {
+
+    gap:12px;
+
+}
+
+
+.nav-links a {
+
+    font-size:13px;
+
+}
+
+
+
+.hero {
+
+    padding:60px 0;
+
+}
+
+
+
 .products {
 
+
     grid-template-columns:
-    1fr;
+    repeat(2,1fr);
+
+
+    gap:15px;
 
 }
 
 
-.product-image {
 
-    height:220px;
+.image-wrapper {
+
+    height:140px;
+
+}
+
+
+
+.card {
+
+    padding:12px;
+
+}
+
+
+
+.card h3 {
+
+    font-size:15px;
+
+}
+
+
+
+.description {
+
+    font-size:12px;
+
+}
+
+
+
+.benefits {
+
+
+    grid-template-columns:1fr;
 
 }
 
 
 }
+
+
 
 </style>
 
 </head>
 
 
-
 <body>
 
 
 
-<!-- ==============================
-     顶部导航
-     ============================== -->
+
+<!-- ==========================================================
+     TOP NAVIGATION
+     ========================================================== -->
+
 
 <header>
 
@@ -428,19 +648,19 @@ footer {
 
 
 <div class="logo">
-好物研习社
+DormPick
 </div>
 
 
 <nav class="nav-links">
 
-<a href="#">桌面好物</a>
+<a href="#">Home</a>
 
-<a href="#">学习装备</a>
+<a href="#">Best Sellers</a>
 
-<a href="#">数码产品</a>
+<a href="#">Deals</a>
 
-<a href="#">生活用品</a>
+<a href="#">About</a>
 
 </nav>
 
@@ -453,25 +673,40 @@ footer {
 
 
 
-<!-- ==============================
-     首页介绍
-     ============================== -->
 
 
-<section class="hero container">
+
+<!-- ==========================================================
+     HERO SECTION
+     ========================================================== -->
+
+
+<section class="container hero">
 
 
 <h1>
-学生宿舍桌面好物精选
+Upgrade Your Dorm Room
 </h1>
 
 
 <p>
-
-精选提升学习效率、改善宿舍生活体验的实用产品。
-我们帮助学生发现值得购买的高品质桌面装备。
-
+Hand-picked essentials that actually make a difference.
+By students, for students.
 </p>
+
+
+<div class="trust">
+
+⭐ Trusted by 5,000+ students
+
+</div>
+
+
+<a href="#products" class="cta">
+
+Shop Our Picks
+
+</a>
 
 
 </section>
@@ -480,21 +715,99 @@ footer {
 
 
 
-<!-- ==============================
-     产品展示区域
-     JavaScript 会自动生成卡片
-     ============================== -->
 
 
-<main class="container">
+
+<!-- ==========================================================
+     PRODUCT SECTION
+     Products are created dynamically with JavaScript
+     ========================================================== -->
 
 
-<div class="products" id="productList">
+<section class="container" id="products">
+
+
+<h2 class="section-title">
+
+🔥 This Week's Top Picks
+
+</h2>
+
+
+
+<div class="products" id="productGrid">
 
 </div>
 
 
-</main>
+</section>
+
+
+
+
+
+
+
+
+<!-- ==========================================================
+     BENEFITS SECTION
+     ========================================================== -->
+
+
+<section class="container benefits">
+
+
+<div class="benefit">
+
+<span>🚚</span>
+
+<h3>
+Free Shipping
+</h3>
+
+<p>
+Save money with convenient delivery.
+</p>
+
+</div>
+
+
+
+<div class="benefit">
+
+<span>🎓</span>
+
+<h3>
+Curated by Students
+</h3>
+
+<p>
+Chosen for real dorm life.
+</p>
+
+</div>
+
+
+
+<div class="benefit">
+
+<span>⭐</span>
+
+<h3>
+Honest Reviews
+</h3>
+
+<p>
+Only products worth your money.
+</p>
+
+</div>
+
+
+</section>
+
+
+
 
 
 
@@ -503,23 +816,24 @@ footer {
 <footer>
 
 
-<div class="container">
+<p>
+© 2025 DormPick.
+As an Amazon Associate, we earn from qualifying purchases.
+</p>
 
 
-<strong>
-Affiliate Disclosure
-</strong>
+<p>
+
+<a href="#">
+Privacy Policy
+</a>
 
 
-<br>
+<a href="#">
+Contact
+</a>
 
-
-本网站参加 Amazon Associates 联盟计划。
-当您通过本站链接购买商品时，我们可能获得一定比例的佣金，
-但不会影响您的购买价格。
-
-
-</div>
+</p>
 
 
 </footer>
@@ -529,195 +843,186 @@ Affiliate Disclosure
 
 
 
+
 <script>
 
 
-/*
-================================================
+/* ==========================================================
+   AMAZON AFFILIATE SETTINGS
 
-亚马逊联盟追踪ID
+   Change this ONE value if you get a new Amazon tracking ID.
 
-以后只需要修改这里：
+   Example:
+   const AMAZON_TAG = "newtag-20";
 
-例如：
-const AMAZON_TAG = "your-new-tag-20";
-
-全站按钮链接都会自动更新。
-
-================================================
-*/
+   ========================================================== */
 
 
-const AMAZON_TAG = "mytag-20";
+const AMAZON_TAG = 'mytag-20';
 
 
 
 
 
-/*
-================================================
 
-产品数据区域
 
-未来接入亚马逊 API 或数据库时，
-只需要替换这里的数据即可。
+/* ==========================================================
+   PRODUCT DATABASE
 
-字段说明：
+   IMPORTANT:
+   Replace the information below when adding real products.
 
-image:
-    产品图片地址
+   Each object contains:
 
-name:
-    产品名称
+   name:
+   -> Replace with your real product name.
 
-description:
-    推荐理由
+   description:
+   -> Replace with your selling point/reason to buy.
 
-price:
-    展示价格
+   image:
+   -> Replace with your Amazon product image URL.
 
-asin:
-    亚马逊商品编号
+   asin:
+   -> Replace with the real Amazon ASIN code.
 
-affiliateLink:
-    联盟链接
+   rating:
+   -> Replace with customer rating number.
 
-================================================
-*/
+   ========================================================== */
 
 
 const products = [
 
 
 {
-    image:
-    "https://via.placeholder.com/600x400?text=Desk+Lamp",
 
-    name:
-    "智能护眼学习台灯",
+name:
+"Hatch Restore 3 Smart Alarm Clock",
 
-    description:
-    "柔和光线设计，减少眼睛疲劳，非常适合宿舍学习桌使用。",
+description:
+"Wake up naturally with sunrise simulation and feel ready for early classes.",
 
-    price:
-    "$29.99",
+image:
+"https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400",
 
-    asin:
-    "B000000001",
+asin:
+"B000000001",
 
-    affiliateLink:
-    ""
+rating:
+4.5,
+
+limited:
+true
+
 },
 
 
 
 {
-    image:
-    "https://via.placeholder.com/600x400?text=Keyboard",
 
-    name:
-    "无线机械键盘",
+name:
+"Minimal Desk Lamp",
 
-    description:
-    "提升宿舍电脑使用体验，安静办公和学习更加舒适。",
+description:
+"Brighten your study space with comfortable eye-friendly lighting.",
 
-    price:
-    "$49.99",
+image:
+"https://images.unsplash.com/photo-1544816155-12df9643f363?w=400",
 
-    asin:
-    "B000000002",
+asin:
+"B000000002",
 
-    affiliateLink:
-    ""
+rating:
+4.8
+
 },
 
 
 
 {
-    image:
-    "https://via.placeholder.com/600x400?text=Monitor+Stand",
 
-    name:
-    "桌面显示器支架",
+name:
+"Five Star Spiral Notebook",
 
-    description:
-    "增加桌面空间，让宿舍书桌保持整洁有序。",
+description:
+"Stay organized through lectures and exams with a durable college notebook designed for everyday student life.",
 
-    price:
-    "$35.99",
+image:
+"https://images.unsplash.com/photo-1585435557343-3b092031a831?w=400",
 
-    asin:
-    "B000000003",
+asin:
+"B08N5WRWNW",
 
-    affiliateLink:
-    ""
+rating:
+4.7
+
+},
+
+
+
+
+{
+
+name:
+"Campus Coffee Mug",
+
+description:
+"Your daily coffee companion for early classes and late nights.",
+
+image:
+"https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400",
+
+asin:
+"B000000004",
+
+rating:
+4.6
+
 },
 
 
 
 {
-    image:
-    "https://via.placeholder.com/600x400?text=USB+Hub",
 
-    name:
-    "多功能 USB 扩展坞",
+name:
+"Insulated Water Bottle",
 
-    description:
-    "解决笔记本接口不足问题，连接更多学习设备。",
+description:
+"Stay hydrated all day with a bottle built for campus life.",
 
-    price:
-    "$25.99",
+image:
+"https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=400",
 
-    asin:
-    "B000000004",
+asin:
+"B000000005",
 
-    affiliateLink:
-    ""
+rating:
+4.9
+
 },
 
 
 
 {
-    image:
-    "https://via.placeholder.com/600x400?text=Chair+Cushion",
 
-    name:
-    "人体工学坐垫",
+name:
+"Smart Desk Organizer",
 
-    description:
-    "改善久坐体验，适合长时间学习和写作。",
+description:
+"Keep your dorm desk clean and your mind focused.",
 
-    price:
-    "$19.99",
+image:
+"https://images.unsplash.com/photo-1616627561950-9f746e330187?w=400",
 
-    asin:
-    "B000000005",
+asin:
+"B000000006",
 
-    affiliateLink:
-    ""
-},
+rating:
+4.7
 
-
-
-{
-    image:
-    "https://via.placeholder.com/600x400?text=Mini+Fan",
-
-    name:
-    "桌面静音小风扇",
-
-    description:
-    "小巧便携，夏季宿舍学习降温神器。",
-
-    price:
-    "$22.99",
-
-    asin:
-    "B000000006",
-
-    affiliateLink:
-    ""
 }
+
 
 
 ];
@@ -728,27 +1033,22 @@ const products = [
 
 
 
-/*
-================================================
-
-生成联盟链接
-
-格式：
-
-https://www.amazon.com/dp/ASIN/?tag=mytag-20
 
 
-如果未来改变 Amazon 地区，
-只修改这里即可。
+/* ==========================================================
+   AMAZON LINK GENERATOR
 
-================================================
-*/
+   Creates:
+
+   https://www.amazon.com/dp/ASIN/?tag=mytag-20
+
+   ========================================================== */
 
 
-function generateAffiliateLink(product){
+function generateAmazonLink(asin){
 
 
-return `https://www.amazon.com/dp/${product.asin}/?tag=${AMAZON_TAG}`;
+return `https://www.amazon.com/dp/${asin}/?tag=${AMAZON_TAG}`;
 
 
 }
@@ -759,53 +1059,67 @@ return `https://www.amazon.com/dp/${product.asin}/?tag=${AMAZON_TAG}`;
 
 
 
-/*
-================================================
 
-动态生成产品卡片
+/* ==========================================================
+   DYNAMICALLY CREATE PRODUCT CARDS
 
-遍历 products 数组，
-自动创建 HTML。
+   The HTML cards are generated from the products array.
 
-================================================
-*/
+   ========================================================== */
 
 
-const productList =
-document.getElementById("productList");
+const grid =
+document.getElementById("productGrid");
 
 
 
-products.forEach(product=>{
+products.forEach(product => {
 
 
-const card = document.createElement("article");
-
-
-card.className =
-"product-card";
+let stars = "★★★★★";
 
 
 
-card.innerHTML = `
+grid.innerHTML += `
 
 
-<img 
-class="product-image"
+<article class="card">
+
+
+
+<div class="image-wrapper">
+
+
+<img
 src="${product.image}"
 alt="${product.name}"
 >
 
 
+<div class="sparkle">
+✨
+</div>
 
-<div class="product-content">
+
+</div>
 
 
-<h2 class="product-title">
+
+
+${product.limited ? 
+'<span class="badge">Limited stock</span>'
+:
+''
+}
+
+
+
+
+<h3>
 
 ${product.name}
 
-</h2>
+</h3>
 
 
 
@@ -817,38 +1131,36 @@ ${product.description}
 
 
 
-<div class="price">
 
-${product.price}
+<div class="rating">
+
+${stars}
 
 </div>
 
 
 
-<a 
-class="amazon-btn"
-href="${generateAffiliateLink(product)}"
-target="_blank"
-rel="nofollow sponsored">
 
-在亚马逊查看
+<a
+class="amazon-btn"
+href="${generateAmazonLink(product.asin)}"
+target="_blank"
+rel="nofollow sponsored"
+>
+
+View on Amazon →
 
 </a>
 
 
-</div>
+
+</article>
 
 
 `;
 
 
-
-productList.appendChild(card);
-
-
 });
-
-
 
 
 
