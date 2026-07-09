@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+
+<!-- 移动端适配 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>好物研习社 | 学生宿舍桌面好物推荐</title>
+
+
+<style>
+
+/* ==============================
+   全局基础样式
+   ============================== */
+
+/* 使用系统字体，保证加载速度和阅读体验 */
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    background: #f8faf8;
+    color: #333;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "PingFang SC",
+        "Microsoft YaHei",
+        sans-serif;
+}
+
+
+/* 页面最大宽度 */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+
+/* ==============================
+   顶部导航栏
+   ============================== */
+
+header {
+
+    background: rgba(255,255,255,0.9);
+
+    border-bottom:1px solid #eee;
+
+    position: sticky;
+    top:0;
+
+    z-index:10;
+
+    backdrop-filter: blur(10px);
+}
+
+
+.nav {
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+
+.logo {
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#1f4037;
+
+}
+
+
+
+.nav-links {
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+
+.nav-links a {
+
+    text-decoration:none;
+
+    color:#666;
+
+    font-size:15px;
+
+}
+
+
+.nav-links a:hover {
+
+    color:#1f4037;
+
+}
+
+
+
+
+/* ==============================
+   页面介绍区域
+   ============================== */
+
+
+.hero {
+
+    padding:70px 0 40px;
+
+    text-align:center;
+
+}
+
+
+.hero h1 {
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+    color:#1f4037;
+
+}
+
+
+
+.hero p {
+
+    max-width:600px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    color:#777;
+
+}
+
+
+
+
+
+/* ==============================
+   产品卡片区域
+   ============================== */
+
+
+.products {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:30px;
+
+    padding-bottom:70px;
+
+}
+
+
+
+
+.product-card {
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
+
+    transition:.3s;
+
+
+}
+
+
+.product-card:hover {
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,0.1);
+
+}
+
+
+
+
+.product-image {
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+    background:#eee;
+
+}
+
+
+
+
+.product-content {
+
+    padding:25px;
+
+}
+
+
+
+.product-title {
+
+    font-size:20px;
+
+    margin:0 0 12px;
+
+}
+
+
+
+.description {
+
+    font-size:14px;
+
+    color:#777;
+
+    line-height:1.7;
+
+    min-height:50px;
+
+}
+
+
+
+.price {
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#e67e22;
+
+    margin:18px 0;
+
+}
+
+
+
+
+.amazon-btn {
+
+
+    display:block;
+
+    text-align:center;
+
+    padding:13px;
+
+
+    background:#1f4037;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+
+
+.amazon-btn:hover {
+
+    background:#16332c;
+
+}
+
+
+
+
+
+/* ==============================
+   页脚
+   ============================== */
+
+
+footer {
+
+    background:#ffffff;
+
+    border-top:1px solid #eee;
+
+    padding:35px 0;
+
+    text-align:center;
+
+    color:#888;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+/* ==============================
+   手机端适配
+   ============================== */
+
+
+@media(max-width:900px){
+
+
+.products {
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+}
+
+
+}
+
+
+@media(max-width:600px){
+
+
+.nav {
+
+    height:auto;
+
+    padding:15px 0;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+.nav-links {
+
+    gap:15px;
+
+}
+
+
+.hero {
+
+    padding:40px 0;
+
+}
+
+
+.hero h1 {
+
+    font-size:30px;
+
+}
+
+
+.products {
+
+    grid-template-columns:
+    1fr;
+
+}
+
+
+.product-image {
+
+    height:220px;
+
+}
+
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<!-- ==============================
+     顶部导航
+     ============================== -->
+
+<header>
+
+<div class="container nav">
+
+
+<div class="logo">
+好物研习社
+</div>
+
+
+<nav class="nav-links">
+
+<a href="#">桌面好物</a>
+
+<a href="#">学习装备</a>
+
+<a href="#">数码产品</a>
+
+<a href="#">生活用品</a>
+
+</nav>
+
+
+</div>
+
+</header>
+
+
+
+
+
+<!-- ==============================
+     首页介绍
+     ============================== -->
+
+
+<section class="hero container">
+
+
+<h1>
+学生宿舍桌面好物精选
+</h1>
+
+
+<p>
+
+精选提升学习效率、改善宿舍生活体验的实用产品。
+我们帮助学生发现值得购买的高品质桌面装备。
+
+</p>
+
+
+</section>
+
+
+
+
+
+<!-- ==============================
+     产品展示区域
+     JavaScript 会自动生成卡片
+     ============================== -->
+
+
+<main class="container">
+
+
+<div class="products" id="productList">
+
+</div>
+
+
+</main>
+
+
+
+
+
+<footer>
+
+
+<div class="container">
+
+
+<strong>
+Affiliate Disclosure
+</strong>
+
+
+<br>
+
+
+本网站参加 Amazon Associates 联盟计划。
+当您通过本站链接购买商品时，我们可能获得一定比例的佣金，
+但不会影响您的购买价格。
+
+
+</div>
+
+
+</footer>
+
+
+
+
+
+
+<script>
+
+
+/*
+================================================
+
+亚马逊联盟追踪ID
+
+以后只需要修改这里：
+
+例如：
+const AMAZON_TAG = "your-new-tag-20";
+
+全站按钮链接都会自动更新。
+
+================================================
+*/
+
+
+const AMAZON_TAG = "mytag-20";
+
+
+
+
+
+/*
+================================================
+
+产品数据区域
+
+未来接入亚马逊 API 或数据库时，
+只需要替换这里的数据即可。
+
+字段说明：
+
+image:
+    产品图片地址
+
+name:
+    产品名称
+
+description:
+    推荐理由
+
+price:
+    展示价格
+
+asin:
+    亚马逊商品编号
+
+affiliateLink:
+    联盟链接
+
+================================================
+*/
+
+
+const products = [
+
+
+{
+    image:
+    "https://via.placeholder.com/600x400?text=Desk+Lamp",
+
+    name:
+    "智能护眼学习台灯",
+
+    description:
+    "柔和光线设计，减少眼睛疲劳，非常适合宿舍学习桌使用。",
+
+    price:
+    "$29.99",
+
+    asin:
+    "B000000001",
+
+    affiliateLink:
+    ""
+},
+
+
+
+{
+    image:
+    "https://via.placeholder.com/600x400?text=Keyboard",
+
+    name:
+    "无线机械键盘",
+
+    description:
+    "提升宿舍电脑使用体验，安静办公和学习更加舒适。",
+
+    price:
+    "$49.99",
+
+    asin:
+    "B000000002",
+
+    affiliateLink:
+    ""
+},
+
+
+
+{
+    image:
+    "https://via.placeholder.com/600x400?text=Monitor+Stand",
+
+    name:
+    "桌面显示器支架",
+
+    description:
+    "增加桌面空间，让宿舍书桌保持整洁有序。",
+
+    price:
+    "$35.99",
+
+    asin:
+    "B000000003",
+
+    affiliateLink:
+    ""
+},
+
+
+
+{
+    image:
+    "https://via.placeholder.com/600x400?text=USB+Hub",
+
+    name:
+    "多功能 USB 扩展坞",
+
+    description:
+    "解决笔记本接口不足问题，连接更多学习设备。",
+
+    price:
+    "$25.99",
+
+    asin:
+    "B000000004",
+
+    affiliateLink:
+    ""
+},
+
+
+
+{
+    image:
+    "https://via.placeholder.com/600x400?text=Chair+Cushion",
+
+    name:
+    "人体工学坐垫",
+
+    description:
+    "改善久坐体验，适合长时间学习和写作。",
+
+    price:
+    "$19.99",
+
+    asin:
+    "B000000005",
+
+    affiliateLink:
+    ""
+},
+
+
+
+{
+    image:
+    "https://via.placeholder.com/600x400?text=Mini+Fan",
+
+    name:
+    "桌面静音小风扇",
+
+    description:
+    "小巧便携，夏季宿舍学习降温神器。",
+
+    price:
+    "$22.99",
+
+    asin:
+    "B000000006",
+
+    affiliateLink:
+    ""
+}
+
+
+];
+
+
+
+
+
+
+
+/*
+================================================
+
+生成联盟链接
+
+格式：
+
+https://www.amazon.com/dp/ASIN/?tag=mytag-20
+
+
+如果未来改变 Amazon 地区，
+只修改这里即可。
+
+================================================
+*/
+
+
+function generateAffiliateLink(product){
+
+
+return `https://www.amazon.com/dp/${product.asin}/?tag=${AMAZON_TAG}`;
+
+
+}
+
+
+
+
+
+
+
+/*
+================================================
+
+动态生成产品卡片
+
+遍历 products 数组，
+自动创建 HTML。
+
+================================================
+*/
+
+
+const productList =
+document.getElementById("productList");
+
+
+
+products.forEach(product=>{
+
+
+const card = document.createElement("article");
+
+
+card.className =
+"product-card";
+
+
+
+card.innerHTML = `
+
+
+<img 
+class="product-image"
+src="${product.image}"
+alt="${product.name}"
+>
+
+
+
+<div class="product-content">
+
+
+<h2 class="product-title">
+
+${product.name}
+
+</h2>
+
+
+
+<p class="description">
+
+${product.description}
+
+</p>
+
+
+
+<div class="price">
+
+${product.price}
+
+</div>
+
+
+
+<a 
+class="amazon-btn"
+href="${generateAffiliateLink(product)}"
+target="_blank"
+rel="nofollow sponsored">
+
+在亚马逊查看
+
+</a>
+
+
+</div>
+
+
+`;
+
+
+
+productList.appendChild(card);
+
+
+});
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
