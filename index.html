@@ -1,326 +1,1702 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DormPick - Upgrade Your Dorm Room</title>
+
+
+<title>DormPick | Best Dorm Essentials for College Students</title>
+
+
+<meta name="description" content="Discover smart dorm room essentials chosen for college students.">
 
 <style>
-*{box-sizing:border-box}
+
+
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+
+*{
+
+box-sizing:border-box;
+
+}
+
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
 
 body{
-    margin:0;
-    background:#fafafa;
-    color:#2d2d2d;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+
+margin:0;
+
+background:#FAFAFA;
+
+color:#2D2D2D;
+
+font-family:
+
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Arial,
+sans-serif;
+
 }
+
+
 
 .container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+
+width:90%;
+
+max-width:1200px;
+
+margin:auto;
+
 }
+
+
+
+/* =====================================================
+   HEADER / NAVIGATION
+===================================================== */
+
 
 header{
-    position:sticky;
-    top:0;
-    z-index:10;
-    background:white;
-    border-bottom:1px solid #eee;
+
+position:sticky;
+
+top:0;
+
+z-index:100;
+
+background:rgba(255,255,255,.95);
+
+backdrop-filter:blur(10px);
+
+border-bottom:1px solid #eeeeee;
+
 }
+
+
 
 .nav{
-    height:70px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+
+height:75px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
 }
+
+
 
 .logo{
-    font-size:26px;
-    font-weight:800;
+
+font-size:28px;
+
+font-weight:800;
+
+letter-spacing:-1px;
+
+color:#2D2D2D;
+
 }
+
+
+
+.logo span{
+
+color:#C2674A;
+
+}
+
+
 
 .nav-links{
-    display:flex;
-    gap:25px;
+
+display:flex;
+
+gap:28px;
+
 }
+
+
 
 .nav-links a{
-    color:#555;
-    text-decoration:none;
+
+text-decoration:none;
+
+color:#555;
+
+font-size:15px;
+
+transition:.3s;
+
 }
+
+
+
+.nav-links a:hover{
+
+color:#C2674A;
+
+}
+
+
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
 
 .hero{
-    text-align:center;
-    padding:80px 0 60px;
+
+text-align:center;
+
+padding:100px 0 80px;
+
 }
+
+
 
 .hero h1{
-    font-size:clamp(38px,5vw,60px);
-    margin:0 0 15px;
+
+font-size:
+
+clamp(42px,6vw,68px);
+
+line-height:1.05;
+
+letter-spacing:-2px;
+
+margin:0;
+
 }
+
+
+
+.hero h1 span{
+
+color:#C2674A;
+
+}
+
+
 
 .hero p{
-    color:#666;
-    font-size:18px;
+
+max-width:650px;
+
+margin:25px auto;
+
+font-size:19px;
+
+line-height:1.7;
+
+color:#666;
+
 }
 
-.trust{
-    margin:20px;
-    color:#777;
+
+
+.trust-box{
+
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+margin:30px 0;
+
+
 }
+
+
+
+.trust-item{
+
+
+background:white;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+font-size:14px;
+
+box-shadow:
+
+0 5px 20px rgba(0,0,0,.05);
+
+}
+
+
 
 .cta{
-    display:inline-block;
-    padding:14px 35px;
-    border-radius:30px;
-    background:#c2674a;
-    color:white;
-    text-decoration:none;
+
+
+display:inline-block;
+
+padding:16px 40px;
+
+background:#C2674A;
+
+color:white;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:600;
+
+font-size:16px;
+
+transition:.3s;
+
 }
+
+
+
+.cta:hover{
+
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 10px 25px rgba(194,103,74,.3);
+
+
+}
+
+
+
+/* =====================================================
+   PRODUCT SECTION
+===================================================== */
+
+
+.products-section{
+
+padding-bottom:70px;
+
+}
+
+
+
+.section-header{
+
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:40px;
+
+
+}
+
+
 
 .section-title{
-    font-size:34px;
-    margin-bottom:35px;
+
+
+font-size:38px;
+
+letter-spacing:-1px;
+
+margin:0;
+
+
 }
+
+
+
+.section-subtitle{
+
+color:#777;
+
+}
+
+
+
+/* PRODUCT GRID */
+
 
 .products{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-    padding-bottom:70px;
+
+
+display:grid;
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+gap:28px;
+
+
 }
+
+
+
+/* =====================================================
+   PRODUCT CARD
+===================================================== */
+
 
 .card{
-    background:white;
-    border-radius:22px;
-    padding:18px;
-    min-height:440px;
-    display:flex;
-    flex-direction:column;
-    box-shadow:0 8px 30px rgba(0,0,0,.06);
-    transition:.3s;
+
+
+background:white;
+
+border-radius:22px;
+
+padding:18px;
+
+box-shadow:
+
+0 8px 30px rgba(0,0,0,.06);
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+
 }
+
+
 
 .card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+
+transform:translateY(-8px);
+
+
+box-shadow:
+
+0 20px 45px rgba(0,0,0,.12);
+
+
 }
 
-.image-wrapper{
-    height:230px;
-    background:#f7f7f7;
-    border-radius:16px;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+
+
+
+.image-box{
+
+
+height:250px;
+
+background:#F3F1EE;
+
+border-radius:18px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+overflow:hidden;
+
+position:relative;
+
+
 }
 
-.image-wrapper img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    padding:12px;
-    transition:.3s;
+
+
+.image-box img{
+
+
+width:100%;
+
+height:100%;
+
+object-fit:contain;
+
+padding:15px;
+
+transition:.4s;
+
+
 }
+
+
 
 .card:hover img{
-    transform:scale(1.05);
+
+
+transform:scale(1.08);
+
+
 }
 
-.sparkle{
-    position:absolute;
+
+
+
+.product-label{
+
+
+position:absolute;
+
+top:15px;
+
+left:15px;
+
+background:#C2674A;
+
+color:white;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+font-size:12px;
+
+font-weight:600;
+
+z-index:2;
+
+
 }
 
-.badge{
-    display:inline-block;
-    width:max-content;
-    margin-top:10px;
-    background:#c2674a;
-    color:white;
-    padding:5px 10px;
-    border-radius:20px;
-    font-size:12px;
+
+
+.product-info{
+
+
+padding-top:10px;
+
+
 }
 
-.card h3{
-    font-size:19px;
-    line-height:1.4;
-    min-height:55px;
+
+.product-name{
+
+
+font-size:20px;
+
+line-height:1.4;
+
+margin:10px 0;
+
 }
 
-.description{
-    color:#666;
-    line-height:1.7;
-    font-size:14px;
-    flex:1;
+
+
+.product-description{
+
+
+font-size:14px;
+
+color:#666;
+
+line-height:1.7;
+
+min-height:50px;
+
+
 }
+
+
 
 .rating{
-    color:#c2674a;
-    letter-spacing:3px;
-    margin:12px 0;
+
+
+margin:15px 0;
+
+color:#C2674A;
+
+font-size:14px;
+
+letter-spacing:2px;
+
+
 }
+
+
+
+.review-count{
+
+
+color:#777;
+
+font-size:13px;
+
+letter-spacing:0;
+
+
+}
+
+
+
+.price{
+
+
+font-size:22px;
+
+font-weight:800;
+
+margin:10px 0 18px;
+
+
+}
+
+
 
 .amazon-btn{
-    text-align:center;
-    padding:12px;
-    border:1px solid #c2674a;
-    border-radius:30px;
-    text-decoration:none;
-    color:#c2674a;
-    margin-top:auto;
+
+
+display:block;
+
+text-align:center;
+
+padding:13px;
+
+border-radius:30px;
+
+border:1px solid #C2674A;
+
+color:#C2674A;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+
 }
+
+
 
 .amazon-btn:hover{
-    background:#c2674a;
-    color:white;
+
+
+background:#C2674A;
+
+color:white;
+
+
 }
 
-.benefits{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-    margin-bottom:70px;
-}
 
-.benefit{
-    background:white;
-    padding:25px;
-    text-align:center;
-    border-radius:18px;
-}
 
-footer{
-    background:#2d2d2d;
-    color:white;
-    padding:40px;
-    text-align:center;
-}
+/* 后续 CSS 和 JS 继续 */
 
-@media(max-width:700px){
-    .products{
-        grid-template-columns:repeat(2,1fr);
-        gap:15px;
-    }
-
-    .image-wrapper{
-        height:150px;
-    }
-
-    .card{
-        padding:12px;
-        min-height:380px;
-    }
-
-    .benefits{
-        grid-template-columns:1fr;
-    }
-}
 </style>
+
 </head>
+
 
 <body>
 
+
 <header>
+
+
 <div class="container nav">
-<div class="logo">DormPick</div>
-<nav class="nav-links">
-<a href="#">Home</a>
-<a href="#">Best Sellers</a>
-<a href="#">Deals</a>
-<a href="#">About</a>
-</nav>
+
+
+<div class="logo">
+
+Dorm<span>Pick</span>
+
 </div>
+
+
+<nav class="nav-links">
+
+<a href="#">Home</a>
+
+<a href="#products">Best Sellers</a>
+
+<a href="#">Deals</a>
+
+<a href="#">About</a>
+
+
+</nav>
+
+
+</div>
+
+
 </header>
 
-<section class="container hero">
-<h1>Upgrade Your Dorm Room</h1>
-<p>Hand-picked essentials that actually make a difference. By students, for students.</p>
-<div class="trust">⭐ Trusted by 5,000+ students</div>
-<a class="cta" href="#products">Shop Our Picks</a>
+
+
+<section class="hero container">
+
+
+<h1>
+
+Upgrade Your <span>Dorm Room</span>
+
+</h1>
+
+
+
+<p>
+
+Smart essentials chosen for college students.
+Create a cleaner, more comfortable and productive campus space.
+
+</p>
+
+
+
+<div class="trust-box">
+
+
+<div class="trust-item">
+
+🎓 Student Selected
+
+</div>
+
+
+<div class="trust-item">
+
+⭐ Top Rated Picks
+
+</div>
+
+
+<div class="trust-item">
+
+🚚 Easy Amazon Delivery
+
+</div>
+
+
+</div>
+
+
+
+<a href="#products" class="cta">
+
+Shop Our Picks
+
+</a>
+
+
 </section>
 
-<section class="container" id="products">
-<h2 class="section-title">🔥 This Week's Top Picks</h2>
-<div class="products" id="productGrid"></div>
+
+
+<section class="container products-section" id="products">
+
+
+<div class="section-header">
+
+
+<div>
+
+
+<h2 class="section-title">
+
+🔥 This Week's Top Picks
+
+</h2>
+
+
+<p class="section-subtitle">
+
+Dorm essentials that solve real student problems.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="products" id="productGrid">
+
+<!-- JavaScript will insert products here -->
+
+
+</div>
+
+
 </section>
+
+
+<!-- =====================================================
+     BENEFIT SECTION
+===================================================== -->
+
 
 <section class="container benefits">
-<div class="benefit">🚚<h3>Free Shipping</h3><p>Easy delivery for students.</p></div>
-<div class="benefit">🎓<h3>Student Selected</h3><p>Chosen for real dorm life.</p></div>
-<div class="benefit">⭐<h3>Honest Picks</h3><p>Only useful products.</p></div>
+
+
+<div class="benefit-card">
+
+<div class="benefit-icon">
+🚚
+</div>
+
+
+<h3>
+Easy Amazon Delivery
+</h3>
+
+
+<p>
+Fast and convenient shipping directly from Amazon.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="benefit-card">
+
+<div class="benefit-icon">
+🎓
+</div>
+
+
+<h3>
+Student Tested Picks
+</h3>
+
+
+<p>
+Products selected for real college dorm life.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="benefit-card">
+
+<div class="benefit-icon">
+⭐
+</div>
+
+
+<h3>
+Honest Recommendations
+</h3>
+
+
+<p>
+Only useful items worth your money.
+</p>
+
+
+</div>
+
+
 </section>
 
+
+
+
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+
 <footer>
-© 2025 DormPick. Amazon affiliate disclosure.
+
+
+<div class="container">
+
+
+<h3>
+DormPick
+</h3>
+
+
+<p>
+
+Helping college students create better dorm spaces.
+
+</p>
+
+
+
+<p>
+
+© 2025 DormPick.
+
+As an Amazon Associate, we earn from qualifying purchases.
+
+</p>
+
+
+
+<div>
+
+
+<a href="#">
+
+Privacy Policy
+
+</a>
+
+
+
+&nbsp;&nbsp;
+
+
+
+<a href="#">
+
+Contact
+
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
 </footer>
 
-<script>
-const AMAZON_TAG="mytag-20";
 
-const products=[
-{
-name:"LED Desk Lamp for Studying",
-description:"Eye-friendly adjustable desk lamp for dorm study sessions and late-night reading.",
-image:"https://m.media-amazon.com/images/I/71qUNmtYy+L._AC_SL1500_.jpg",
-asin:"B0F268R5MV"
-},
-{
-name:"7-Tier Desktop Organizer",
-description:"Save desk space and keep notebooks, documents and supplies organized.",
-image:"https://m.media-amazon.com/images/I/91jEQ-REL6L._AC_SL1500_.jpg",
-asin:"B07R7FZ6RG"
-},
-{
-name:"Aluminum Laptop Stand",
-description:"Improve posture and create a cleaner college study setup.",
-image:"https://m.media-amazon.com/images/I/71kLF5M+yNL._AC_SL1500_.jpg",
-asin:"B0FX4LFBD8"
-},
-{
-name:"Dorm Bed Privacy Curtain",
-description:"Create a private and comfortable sleeping area in shared dorm rooms.",
-image:"https://m.media-amazon.com/images/I/71WT5ih1lxL._AC_SL1500_.jpg",
-asin:"B0FJRXK4W6"
-},
-{
-name:"College Dorm Power Strip",
-description:"Charge laptops, phones and accessories with compact USB ports.",
-image:"https://m.media-amazon.com/images/I/61OncmZevkL._AC_SL1500_.jpg",
-asin:"B0B1DKN9HG"
-},
-{
-name:"Mini Quiet Desk Fan",
-description:"Stay cool while studying with a compact dorm-friendly fan.",
-image:"https://m.media-amazon.com/images/I/71UzikI6vHL._AC_SL1500_.jpg",
-asin:"B0GS1QK4Q6"
+
+
+
+
+
+<style>
+
+
+
+/* =====================================================
+   BENEFITS STYLE
+===================================================== */
+
+
+.benefits{
+
+
+display:grid;
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+gap:25px;
+
+margin-bottom:80px;
+
+
 }
+
+
+
+
+.benefit-card{
+
+
+background:white;
+
+border-radius:20px;
+
+padding:35px 25px;
+
+text-align:center;
+
+box-shadow:
+
+0 8px 25px rgba(0,0,0,.05);
+
+
+}
+
+
+
+.benefit-icon{
+
+
+font-size:38px;
+
+margin-bottom:15px;
+
+
+}
+
+
+
+.benefit-card h3{
+
+
+margin:10px 0;
+
+font-size:20px;
+
+
+}
+
+
+
+.benefit-card p{
+
+
+color:#666;
+
+font-size:14px;
+
+line-height:1.6;
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   FOOTER STYLE
+===================================================== */
+
+
+footer{
+
+
+background:#292929;
+
+color:white;
+
+padding:55px 0;
+
+text-align:center;
+
+
+}
+
+
+
+footer h3{
+
+
+font-size:26px;
+
+margin-bottom:15px;
+
+
+}
+
+
+
+footer p{
+
+
+color:#ccc;
+
+font-size:14px;
+
+line-height:1.8;
+
+
+}
+
+
+
+footer a{
+
+
+color:#ddd;
+
+text-decoration:none;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   MOBILE RESPONSIVE DESIGN
+===================================================== */
+
+
+@media(max-width:900px){
+
+
+.products{
+
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+
+}
+
+
+
+}
+
+
+
+@media(max-width:700px){
+
+
+
+.container{
+
+
+width:92%;
+
+
+}
+
+
+
+.nav{
+
+
+height:65px;
+
+
+}
+
+
+
+.logo{
+
+
+font-size:22px;
+
+
+}
+
+
+
+.nav-links{
+
+
+gap:12px;
+
+
+}
+
+
+
+.nav-links a{
+
+
+font-size:12px;
+
+
+}
+
+
+
+.hero{
+
+
+padding:65px 0;
+
+
+}
+
+
+
+.hero p{
+
+
+font-size:16px;
+
+
+}
+
+
+
+.section-title{
+
+
+font-size:28px;
+
+
+}
+
+
+
+.products{
+
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+
+gap:14px;
+
+
+}
+
+
+
+.card{
+
+
+padding:12px;
+
+border-radius:16px;
+
+
+}
+
+
+
+.image-box{
+
+
+height:150px;
+
+
+}
+
+
+
+.product-name{
+
+
+font-size:15px;
+
+
+}
+
+
+
+.product-description{
+
+
+font-size:12px;
+
+
+min-height:65px;
+
+
+}
+
+
+
+.price{
+
+
+font-size:18px;
+
+
+}
+
+
+
+.amazon-btn{
+
+
+font-size:13px;
+
+
+padding:11px 5px;
+
+
+}
+
+
+
+.benefits{
+
+
+grid-template-columns:1fr;
+
+
+}
+
+
+
+}
+
+
+
+
+</style>
+
+<script>
+
+
+/* =====================================================
+   AMAZON AFFILIATE SETTINGS
+
+   以后 Amazon 给你新的 Tracking ID
+
+   只需要修改这里一次
+
+===================================================== */
+
+
+const AMAZON_TAG = "mytag-20";
+
+
+
+
+
+/* =====================================================
+   PRODUCT DATABASE
+
+
+   修改产品只需要改这里
+
+   name:
+   产品名称
+
+   tag:
+   产品标签
+
+   description:
+   推荐理由
+
+   price:
+   产品价格
+
+   rating:
+   星级
+
+   reviews:
+   评论数量
+
+   image:
+   产品图片链接
+
+   asin:
+   Amazon ASIN号码
+
+
+===================================================== */
+
+
+const products = [
+
+
+
+{
+
+name:
+"LED Desk Lamp for Studying",
+
+tag:
+"Student Favorite",
+
+description:
+"Reduce eye strain during late-night study sessions with adjustable brightness and comfortable lighting.",
+
+price:
+"$25.99",
+
+rating:
+"4.7",
+
+reviews:
+"3,000+ reviews",
+
+image:
+"https://m.media-amazon.com/images/I/71qUNmtYy+L._AC_SL1500_.jpg",
+
+asin:
+"B0F268R5MV"
+
+
+},
+
+
+
+
+{
+
+name:
+"7-Tier Desktop Organizer",
+
+tag:
+"Desk Essential",
+
+description:
+"Keep your notebooks, documents and supplies organized while saving valuable dorm desk space.",
+
+price:
+"$24.99",
+
+rating:
+"4.6",
+
+reviews:
+"2,500+ reviews",
+
+image:
+"https://m.media-amazon.com/images/I/91jEQ-REL6L._AC_SL1500_.jpg",
+
+asin:
+"B07R7FZ6RG"
+
+
+},
+
+
+
+
+
+{
+
+name:
+"Aluminum Laptop Stand",
+
+tag:
+"Best Seller",
+
+description:
+"Improve your posture and create a cleaner ergonomic workspace for studying.",
+
+price:
+"$29.99",
+
+rating:
+"4.8",
+
+reviews:
+"5,000+ reviews",
+
+image:
+"https://m.media-amazon.com/images/I/71kLF5M+yNL._AC_SL1500_.jpg",
+
+asin:
+"B0FX4LFBD8"
+
+
+},
+
+
+
+
+
+{
+
+name:
+"Dorm Bed Privacy Curtain",
+
+tag:
+"Dorm Must Have",
+
+description:
+"Turn your shared dorm bed into a private sleeping space for better comfort.",
+
+price:
+"$32.99",
+
+rating:
+"4.5",
+
+reviews:
+"1,800+ reviews",
+
+image:
+"https://m.media-amazon.com/images/I/71WT5ih1lxL._AC_SL1500_.jpg",
+
+asin:
+"B0FJRXK4W6"
+
+
+},
+
+
+
+
+
+{
+
+name:
+"College Dorm Power Strip",
+
+tag:
+"Room Essential",
+
+description:
+"Charge your laptop, phone and accessories with multiple outlets and USB ports.",
+
+price:
+"$21.99",
+
+rating:
+"4.7",
+
+reviews:
+"4,000+ reviews",
+
+image:
+"https://m.media-amazon.com/images/I/61OncmZevkL._AC_SL1500_.jpg",
+
+asin:
+"B0B1DKN9HG"
+
+
+},
+
+
+
+
+
+
+{
+
+name:
+"Mini Quiet Desk Fan",
+
+tag:
+"Summer Pick",
+
+description:
+"Stay cool while studying with a compact and quiet fan designed for dorm rooms.",
+
+price:
+"$19.99",
+
+rating:
+"4.6",
+
+reviews:
+"3,500+ reviews",
+
+image:
+"https://m.media-amazon.com/images/I/71UzikI6vHL._AC_SL1500_.jpg",
+
+asin:
+"B0GS1QK4Q6"
+
+
+}
+
+
+
 ];
 
-function link(asin){
+
+
+
+
+
+
+
+/* =====================================================
+   AMAZON LINK GENERATOR
+
+
+   自动生成:
+
+   https://www.amazon.com/dp/ASIN/?tag=mytag-20
+
+
+===================================================== */
+
+
+function generateAmazonLink(asin){
+
+
 return `https://www.amazon.com/dp/${asin}/?tag=${AMAZON_TAG}`;
+
+
 }
 
-const grid=document.getElementById("productGrid");
 
-products.forEach(p=>{
-grid.innerHTML+=`
+
+
+
+
+
+/* =====================================================
+   RENDER PRODUCTS
+
+
+   自动把产品数据生成网页卡片
+
+
+===================================================== */
+
+
+const productGrid = 
+document.getElementById("productGrid");
+
+
+
+
+products.forEach(product => {
+
+
+
+productGrid.innerHTML += `
+
+
 <article class="card">
-<div class="image-wrapper">
-<img src="${p.image}" alt="${p.name}">
+
+
+
+<div class="image-box">
+
+
+<div class="product-label">
+
+${product.tag}
+
 </div>
-<h3>${p.name}</h3>
-<p class="description">${p.description}</p>
-<div class="rating">★★★★★</div>
-<a class="amazon-btn" href="${link(p.asin)}" target="_blank">
-View on Amazon →
+
+
+
+<img 
+
+src="${product.image}"
+
+alt="${product.name}"
+
+>
+
+
+</div>
+
+
+
+
+
+<div class="product-info">
+
+
+<h3 class="product-name">
+
+${product.name}
+
+</h3>
+
+
+
+
+
+<p class="product-description">
+
+${product.description}
+
+</p>
+
+
+
+
+
+<div class="rating">
+
+
+★★★★★
+
+
+<span class="review-count">
+
+${product.rating} (${product.reviews})
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="price">
+
+${product.price}
+
+</div>
+
+
+
+
+
+<a
+
+class="amazon-btn"
+
+href="${generateAmazonLink(product.asin)}"
+
+target="_blank"
+
+rel="nofollow sponsored"
+
+
+>
+
+Check Price on Amazon →
+
 </a>
-</article>`;
+
+
+
+
+</div>
+
+
+
+
+</article>
+
+
+
+`;
+
+
+
 });
+
+
+
+
+
 </script>
 
+
 </body>
+
 </html>
