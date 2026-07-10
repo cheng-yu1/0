@@ -1700,3 +1700,843 @@ Check Price on Amazon →
 </body>
 
 </html>
+<!-- =====================================================
+     HEADER NAVIGATION
+===================================================== -->
+
+
+<header>
+
+<div class="container nav">
+
+
+<div class="logo">
+
+Dorm<span>Pick</span>
+
+</div>
+
+
+
+<nav class="nav-links">
+
+<a href="#">
+Home
+</a>
+
+
+<a href="#products">
+Best Sellers
+</a>
+
+
+<a href="#">
+Deals
+</a>
+
+
+<a href="#">
+About
+</a>
+
+
+</nav>
+
+
+</div>
+
+</header>
+
+
+
+
+
+
+
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+
+
+<section class="hero container">
+
+
+<h1>
+
+The Dorm Essentials
+<span>Students Actually Love</span>
+
+</h1>
+
+
+
+<p>
+
+Smart products chosen for college students.
+Create a cleaner, more comfortable and productive dorm room.
+
+</p>
+
+
+
+
+
+<div class="trust-box">
+
+
+<div class="trust-item">
+
+🎓 Student Selected
+
+</div>
+
+
+
+<div class="trust-item">
+
+⭐ 4.5+ Rated Products
+
+</div>
+
+
+
+<div class="trust-item">
+
+🚚 Amazon Delivery
+
+</div>
+
+
+
+</div>
+
+
+
+
+<a href="#products" class="cta">
+
+Shop Our Picks
+
+</a>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =====================================================
+     PRODUCT SECTION
+===================================================== -->
+
+
+<section class="container products-section" id="products">
+
+
+<div class="section-header">
+
+
+<h2 class="section-title">
+
+🔥 This Week's Top Picks
+
+</h2>
+
+
+<p class="section-subtitle">
+
+Dorm essentials that solve real student problems.
+
+</p>
+
+
+</div>
+
+
+
+<div class="products" id="productGrid">
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =====================================================
+     PRODUCT DATABASE
+
+     ONLY EDIT THIS AREA WHEN CHANGING PRODUCTS
+
+===================================================== -->
+
+
+<script>
+
+
+/*
+
+Amazon Tracking ID
+
+Change only this if your tracking ID changes
+
+*/
+
+
+const AMAZON_TAG = "mytag-20";
+
+
+
+
+
+
+
+/*
+
+PRODUCT DATABASE
+
+How to replace:
+
+name:
+Product name
+
+description:
+Why students need it
+
+price:
+Current Amazon price
+
+image:
+Amazon image URL
+
+asin:
+Amazon product ASIN
+
+
+*/
+
+
+const products = [
+
+
+
+{
+
+name:
+"LED Desk Lamp for Studying",
+
+
+tag:
+"Student Favorite",
+
+
+description:
+"Reduce eye strain during late-night study sessions with adjustable brightness and comfortable lighting.",
+
+
+price:
+"$29.89",
+
+
+rating:
+"4.7",
+
+
+reviews:
+"3,000+ reviews",
+
+
+image:
+"https://m.media-amazon.com/images/I/71qUNmtYy+L._AC_SL1500_.jpg",
+
+
+asin:
+"B0F268R5MV"
+
+
+},
+
+
+
+
+
+
+{
+
+name:
+"7-Tier Desktop Organizer",
+
+
+tag:
+"Desk Essential",
+
+
+description:
+"Keep notebooks, documents and supplies organized while saving valuable dorm desk space.",
+
+
+price:
+"$25.47",
+
+
+rating:
+"4.6",
+
+
+reviews:
+"2,500+ reviews",
+
+
+image:
+"https://m.media-amazon.com/images/I/91jEQ-REL6L._AC_SL1500_.jpg",
+
+
+asin:
+"B07R7FZ6RG"
+
+
+},
+
+
+
+
+
+
+{
+
+name:
+"Aluminum Laptop Stand",
+
+
+tag:
+"Best Seller",
+
+
+description:
+"Improve your posture and create a cleaner ergonomic workspace for studying.",
+
+
+price:
+"$21.59",
+
+
+rating:
+"4.8",
+
+
+reviews:
+"5,000+ reviews",
+
+
+image:
+"https://m.media-amazon.com/images/I/71kLF5M+yNL._AC_SL1500_.jpg",
+
+
+asin:
+"B0FX4LFBD8"
+
+
+},
+
+
+
+
+
+
+{
+
+name:
+"Dorm Bed Privacy Curtain",
+
+
+tag:
+"Dorm Must Have",
+
+
+description:
+"Create a private sleeping space and make shared dorm rooms more comfortable.",
+
+
+price:
+"$13.99",
+
+
+rating:
+"4.5",
+
+
+reviews:
+"1,800+ reviews",
+
+
+image:
+"https://m.media-amazon.com/images/I/71WT5ih1lxL._AC_SL1500_.jpg",
+
+
+asin:
+"B0FJRXK4W6"
+
+
+},
+
+
+
+
+
+
+{
+
+name:
+"College Dorm Power Strip",
+
+
+tag:
+"Room Essential",
+
+
+description:
+"Charge laptops, phones and accessories with multiple outlets and USB charging ports.",
+
+
+price:
+"$12.99",
+
+
+rating:
+"4.7",
+
+
+reviews:
+"4,000+ reviews",
+
+
+image:
+"https://m.media-amazon.com/images/I/61OncmZevkL._AC_SL1500_.jpg",
+
+
+asin:
+"B0B1DKN9HG"
+
+
+},
+
+
+
+
+
+
+{
+
+name:
+"Mini Quiet Desk Fan",
+
+
+tag:
+"Summer Pick",
+
+
+description:
+"Stay cool while studying with a compact and quiet fan designed for dorm rooms.",
+
+
+price:
+"$20.99",
+
+
+rating:
+"4.6",
+
+
+reviews:
+"3,500+ reviews",
+
+
+image:
+"https://m.media-amazon.com/images/I/71UzikI6vHL._AC_SL1500_.jpg",
+
+
+asin:
+"B0GS1QK4Q6"
+
+
+}
+
+
+
+
+
+];
+
+
+
+
+
+
+
+
+/*
+
+Generate Amazon Affiliate Link
+
+*/
+
+
+function generateAmazonLink(asin){
+
+
+return `https://www.amazon.com/dp/${asin}/?tag=${AMAZON_TAG}`;
+
+
+}
+
+<script>
+
+
+/* =====================================================
+   CREATE PRODUCT CARDS
+
+   This automatically builds the product cards
+   from the products array above.
+
+===================================================== */
+
+
+const productGrid =
+document.getElementById("productGrid");
+
+
+
+
+products.forEach(product => {
+
+
+
+productGrid.innerHTML += `
+
+
+<article class="card">
+
+
+
+<div class="image-box">
+
+
+<div class="product-label">
+
+${product.tag}
+
+</div>
+
+
+
+<img
+
+src="${product.image}"
+
+alt="${product.name}"
+
+>
+
+
+</div>
+
+
+
+
+
+
+<h3 class="product-name">
+
+${product.name}
+
+</h3>
+
+
+
+
+
+
+<p class="product-description">
+
+<strong>Why students choose it:</strong><br>
+
+${product.description}
+
+</p>
+
+
+
+
+
+
+<div class="rating">
+
+
+★★★★★
+
+
+<span class="review-count">
+
+${product.rating} (${product.reviews})
+
+</span>
+
+
+</div>
+
+
+
+
+
+
+<div class="price">
+
+${product.price}
+
+</div>
+
+
+
+<div class="price-note">
+
+Price may change. Check Amazon for latest deal.
+
+</div>
+
+
+
+
+
+
+
+<a
+
+class="amazon-btn"
+
+href="${generateAmazonLink(product.asin)}"
+
+target="_blank"
+
+rel="nofollow sponsored"
+
+>
+
+View Today's Deal →
+
+</a>
+
+
+
+
+
+</article>
+
+
+`;
+
+
+
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+<!-- =====================================================
+     BENEFITS SECTION
+===================================================== -->
+
+
+<section class="container benefits">
+
+
+<div class="benefit-card">
+
+
+<div class="benefit-icon">
+
+🚚
+
+</div>
+
+
+<h3>
+
+Amazon Delivery
+
+</h3>
+
+
+<p>
+
+Fast shipping directly from Amazon.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="benefit-card">
+
+
+<div class="benefit-icon">
+
+🎓
+
+</div>
+
+
+<h3>
+
+Student Tested
+
+</h3>
+
+
+<p>
+
+Chosen for real college dorm life.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="benefit-card">
+
+
+<div class="benefit-icon">
+
+⭐
+
+</div>
+
+
+<h3>
+
+Honest Recommendations
+
+</h3>
+
+
+<p>
+
+Only useful products worth your money.
+
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =====================================================
+     FOOTER
+
+===================================================== -->
+
+
+<footer>
+
+
+<div class="container">
+
+
+<h3>
+
+DormPick
+
+</h3>
+
+
+
+
+<p>
+
+Helping students create better dorm spaces.
+
+</p>
+
+
+
+
+
+<p>
+
+© 2025 DormPick.
+
+As an Amazon Associate, we earn from qualifying purchases.
+
+</p>
+
+
+
+
+<p>
+
+
+<a href="#">
+
+Privacy Policy
+
+</a>
+
+
+&nbsp;&nbsp;
+
+
+<a href="#">
+
+Contact
+
+</a>
+
+
+</p>
+
+
+
+</div>
+
+
+</footer>
+
+
+
+
+
+
+
+</body>
+
+</html>
